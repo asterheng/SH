@@ -14,7 +14,7 @@ A conversational app built using [Chainlit](https://chainlit.io/) for [briefly d
 
 ## Demo
 
-[Click here to view the live demo](https://your-hosting-link) 🚀
+[Click here to view the live demo](https://SH.github.io) 🚀
 
 ---
 
