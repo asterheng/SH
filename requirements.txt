@@ -1,6 +1,6 @@
-chainlit==0.4.0          # Chainlit library for building conversational apps
-pandas==1.5.3            # For data manipulation
-openai==0.27.8           # For interacting with OpenAI's GPT API
-tabulate==0.9.0          # For generating markdown tables
-flake8==5.0.4            # Linter for code quality
-black==22.12.0           # Code formatter
+chainlit
+openai==0.28
+tabulate
+pydantic<2.0
+aioresponses
+responses
