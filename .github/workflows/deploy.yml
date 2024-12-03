@@ -27,12 +27,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install chainlit                   # Install Chainlit
-        pip install openai                     # Install OpenAI SDK
-        pip install tabulate                   # Install tabulate
-        pip install "pydantic<2.0"             # For compatibility with Chainlit
-        pip install aioresponses               # Required for mocking in CI mode
-        pip install -r requirements.txt || echo "No requirements file, skipping."
+        pip install "pydantic<2.0"               # Install pydantic < 2.0
+        pip install chainlit                    # Install Chainlit
+        pip install openai==0.28                # Install OpenAI SDK
+        pip install tabulate                    # Install tabulate for tables
+        pip install aioresponses                # Install aioresponses for mocking
+        pip install responses                   # Install responses for mocking
+        pip install -r requirements.txt || echo "No requirements file, skipping.
 
     # Step 4: Show installed packages (for debugging)
     - name: Show installed Python packages
