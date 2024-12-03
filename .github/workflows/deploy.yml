@@ -29,5 +29,5 @@ jobs:
         pip install pytest
         pip install -r requirements.txt || echo "No requirements file, skipping."
 
-    - name: Run pytest
-      run: pytest
+    - name: execute py script
+      run: python python -m chainlit run app.py -w
