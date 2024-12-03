@@ -31,14 +31,12 @@ jobs:
         pip install chainlit                     # Install Chainlit
         pip install openai==0.28                 # Install OpenAI SDK
         pip install tabulate                     # Install tabulate for tables
+        pip install aioresponses                 # Install aioresponses for mocking
         pip install -r requirements.txt || echo "No requirements file, skipping."
 
     # Step 4: Show installed packages (for debugging)
     - name: Show installed Python packages
       run: |
-        pip show pydantic
-        pip show chainlit
-        pip show openai
         pip list
 
     # Step 5: Run the Chainlit app
