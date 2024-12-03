@@ -4,3 +4,4 @@ tabulate
 pydantic<2.0
 aioresponses
 responses
+pandas==1.5.3
