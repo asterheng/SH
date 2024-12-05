@@ -30,7 +30,7 @@ jobs:
 
     - name: Push Docker image to GitHub Container Registry
       run: |
-        docker push ghcr.io/${{ github.repository }}/fastapi-app:latest
+        docker push ghcr.io/asterheng/sh/fastapi-app:latest
 
     - name: Deploy to server
       run: |
