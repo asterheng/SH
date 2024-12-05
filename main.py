@@ -1,37 +1,21 @@
 import flet as ft
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+from chainlit.utils import mount_chainlit
+import uvicorn
+
 
 app = FastAPI()
 
 def main(page: ft.Page):
     page.add(ft.Text("Hello, World from Flet!"))
+    uvicorn.run(app, host="0.0.0.0", port=8000)
 
-@app.get("/", response_class=HTMLResponse)
-async def read_root():
-    # Embed Flet app in an HTML iframe
-    return """
-        <html>
-            <head>
-                <title>FastAPI + Flet</title>
-            </head>
-            <body>
-                <h1>FastAPI + Flet Application</h1>
-                <iframe src="http://localhost:8550" width="800" height="600"></iframe>
-            </body>
-        </html>
-    """
+@app.get("/app")
+def read_main():
+    return {"message": "Hello World from main app"}
 
-def run_flet():
-    # Run Flet app as a background task
-    ft.app(target=main, view=ft.WEB_BROWSER)
+mount_chainlit(app=app, target="app.py", path="/SH")
 
 if __name__ == "__main__":
-    import threading
-    import uvicorn
-
-    # Run Flet in a separate thread
-    threading.Thread(target=run_flet).start()
-
-    # Run FastAPI with Uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Start Flet in a separate thread
+    ft.app(main)
