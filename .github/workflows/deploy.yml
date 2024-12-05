@@ -32,7 +32,7 @@ jobs:
       run: |
         docker push ghcr.io/${{ github.repository }}/fastapi-app:latest
 
-    - name: Deploy to server (example: AWS ECS, or any other service)
+    - name: Deploy to server
       run: |
         # Replace with the deployment commands for your server (AWS, etc.)
         echo "Deploying FastAPI container to server..."
